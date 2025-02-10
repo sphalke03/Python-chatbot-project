@@ -1,0 +1,95 @@
+{
+  "intents": [
+    {
+      "tag": "website_verification",
+      "patterns": [
+        "How can I verify the website?",
+        "What is the URL of the demo site?",
+        "Is the web demo live?",
+        "Where can I test the website?",
+        "How do I check if the site is working?"
+      ],
+      "responses": [
+        "You can verify the website by visiting: [your-demo-url.com]",
+        "The web demo is live at: [your-demo-url.com]. Please check!",
+        "To test the website, go to: [your-demo-url.com] and explore the features."
+      ]
+    },
+    {
+      "tag": "aws_setup",
+      "patterns": [
+        "How do I deploy my website on AWS?",
+        "What is the process for AWS deployment?",
+        "Can you guide me through S3 hosting?",
+        "How do I upload files to AWS S3?",
+        "How do I create an EC2 instance?"
+      ],
+      "responses": [
+        "To deploy your website on AWS, follow these steps: 1. Upload your frontend to S3, 2. Set up EC2 for backend hosting, 3. Configure RDS for the database.",
+        "AWS setup involves S3 for static hosting, EC2 for backend services, and API Gateway for connecting Lambda functions.",
+        "To upload files to S3, use the command: `aws s3 sync frontend/ s3://your-bucket-name --acl public-read`."
+      ]
+    },
+    {
+      "tag": "api_gateway",
+      "patterns": [
+        "How do I set up API Gateway?",
+        "What is the endpoint for API Gateway?",
+        "How do I connect API Gateway to Lambda?",
+        "How do I deploy an API?",
+        "Can you help with API Gateway setup?"
+      ],
+      "responses": [
+        "To set up API Gateway, create a REST API, add HTTP methods, link it to your Lambda function, and deploy the API.",
+        "Your API Gateway endpoint will look like this: `https://api-id.execute-api.region.amazonaws.com/prod/`.",
+        "To connect API Gateway to Lambda, use the AWS Console or CLI: `aws apigateway create-rest-api --name 'ServerlessAPI'`."
+      ]
+    },
+    {
+      "tag": "lambda_functions",
+      "patterns": [
+        "How do I deploy a Lambda function?",
+        "How do I zip a function for AWS Lambda?",
+        "What is the role of Lambda in serverless architecture?",
+        "Can you provide a Lambda function example?",
+        "How do I update a Lambda function?"
+      ],
+      "responses": [
+        "To deploy a Lambda function, zip your file and upload it using: `aws lambda create-function --function-name myFunction --runtime nodejs18.x --handler index.handler --zip-file fileb://function.zip`.",
+        "Lambda functions are used for serverless computing and can handle API requests, process data, and interact with other AWS services.",
+        "To update a Lambda function, use: `aws lambda update-function-code --function-name myFunction --zip-file fileb://updated.zip`."
+      ]
+    },
+    {
+      "tag": "database_setup",
+      "patterns": [
+        "How do I set up an RDS database?",
+        "What is the best way to connect to MySQL in AWS?",
+        "How do I configure a database for my web app?",
+        "Can I use RDS for a dynamic website?",
+        "How do I secure my AWS database?"
+      ],
+      "responses": [
+        "To set up RDS, create a database instance, configure security groups, and update your backend connection details.",
+        "You can connect to RDS using a MySQL client and the connection string: `mysql -h your-rds-endpoint -u username -p`.",
+        "For security, enable IAM authentication, use private subnets, and apply least privilege access policies."
+      ]
+    },
+    {
+      "tag": "troubleshooting",
+      "patterns": [
+        "My deployment is failing, what should I do?",
+        "I'm getting a 404 error, how can I fix it?",
+        "Why is my AWS Lambda function not responding?",
+        "My API Gateway is not working, what could be wrong?",
+        "I'm getting 'Access Denied' on S3, what should I do?"
+      ],
+      "responses": [
+        "Check your IAM roles and permissions for AWS services.",
+        "Ensure that your Lambda function has the correct permissions to execute.",
+        "For API Gateway, check the logs and verify the correct endpoint configuration.",
+        "If you're seeing 'Access Denied' on S3, update the bucket policy to allow public access or set ACLs correctly."
+      ]
+    }
+  ]
+}
