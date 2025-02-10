@@ -1,0 +1,23 @@
+/chatbot-project
+  ├── chatbot/              # Chatbot Core Logic
+  │   ├── bot.py           # AI Engine
+  │   ├── train.py         # NLP Training Script (if using custom model)
+  │   ├── intents.json     # Chatbot Training Data
+  │
+  ├── api/                 # API (Flask or FastAPI)
+  │   ├── app.py           # REST API for Chatbot
+  │   ├── requirements.txt # Dependencies
+  │
+  ├── database/            # Database Setup
+  │   ├── dynamodb_setup.py # AWS DynamoDB Setup
+  │   ├── firebase_setup.py # Firebase Setup
+  │
+  ├── deployment/          # Deployment Scripts
+  │   ├── deploy_aws.sh    # Deploy to AWS
+  │   ├── deploy_gcloud.sh # Deploy to Google Cloud
+  │
+  ├── frontend/            # Web Interface (Optional)
+  │   ├── index.html       # Chat UI
+  │   ├── script.js        # JavaScript for Frontend
+  │
+  ├── README.md            # Project Overview
