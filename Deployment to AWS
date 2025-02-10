@@ -1,0 +1,13 @@
+- Deploy API to AWS Lambda
+
+zip -r chatbot-api.zip api/
+aws lambda create-function --function-name ChatbotAPI \
+    --runtime python3.8 --handler app.lambda_handler \
+    --role arn:aws:iam::your-account-id:role/your-lambda-role \
+    --zip-file fileb://chatbot-api.zip
+
+
+- Deploy Chatbot Web UI to S3
+
+aws s3 mb s3://your-chatbot-bucket
+aws s3 sync frontend/ s3://your-chatbot-bucket --acl public-read
